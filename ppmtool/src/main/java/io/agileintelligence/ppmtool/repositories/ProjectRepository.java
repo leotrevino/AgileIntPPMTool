@@ -1,4 +1,4 @@
-package io.agileintelligence.ppmtool.respositories;
+package io.agileintelligence.ppmtool.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
