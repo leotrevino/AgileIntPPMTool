@@ -4,6 +4,7 @@ import io.agileintelligence.ppmtool.domain.Project;
 import io.agileintelligence.ppmtool.services.MapValidationErrorService;
 import io.agileintelligence.ppmtool.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -47,5 +48,10 @@ public class ProjectController {
 		Project project = projectService.findProjectByIdentifier(projectId);
 
 		return new ResponseEntity<Project>(project, HttpStatus.OK);
+	}
+
+	@GetMapping("/all")
+	public Iterable<Project> getAllProjects() {
+		return projectService.findAllProjects();
 	}
 }
